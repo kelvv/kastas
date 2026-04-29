@@ -12,7 +12,7 @@ export const sessionOptions: SessionOptions = {
     "kastas-default-password-change-me-32-bytes-min!",
   cookieName: "kastas_admin",
   cookieOptions: {
-    secure: (process.env.NEXT_PUBLIC_SITE_URL || "").startsWith("https://"),
+    secure: process.env.COOKIE_SECURE === "true",
     httpOnly: true,
     sameSite: "lax",
     maxAge: 60 * 60 * 24 * 7,
