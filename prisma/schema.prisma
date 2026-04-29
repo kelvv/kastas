@@ -1,0 +1,131 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id        Int        @id @default(autoincrement())
+  name      String
+  slug      String     @unique
+  parentId  Int?       @map("parent_id")
+  parent    Category?  @relation("CategoryTree", fields: [parentId], references: [id])
+  children  Category[] @relation("CategoryTree")
+  sort      Int        @default(0)
+  cover     String?
+  isBrand   Boolean    @default(false) @map("is_brand")
+  visible   Boolean    @default(true)
+  legacyId  Int?       @map("legacy_id")
+  products  Product[]
+  createdAt DateTime   @default(now()) @map("created_at")
+  updatedAt DateTime   @updatedAt @map("updated_at")
+
+  @@index([parentId])
+  @@index([sort])
+  @@map("categories")
+}
+
+model Product {
+  id          Int       @id @default(autoincrement())
+  categoryId  Int?      @map("category_id")
+  category    Category? @relation(fields: [categoryId], references: [id])
+  title       String
+  slug        String    @unique
+  cover       String?
+  summary     String?   @db.Text
+  content     String?   @db.Text
+  images      Json      @default("[]")
+  isTop       Boolean   @default(false) @map("is_top")
+  isHot       Boolean   @default(false) @map("is_hot")
+  isNew       Boolean   @default(false) @map("is_new")
+  click       Int       @default(0)
+  sort        Int       @default(0)
+  visible     Boolean   @default(true)
+  seoTitle    String?   @map("seo_title")
+  seoKeywords String?   @map("seo_keywords")
+  seoDesc     String?   @map("seo_desc")
+  legacyId    Int?      @map("legacy_id")
+  publishedAt DateTime? @map("published_at")
+  inquiries   Inquiry[]
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @updatedAt @map("updated_at")
+
+  @@index([categoryId])
+  @@index([visible, sort])
+  @@index([legacyId])
+  @@map("products")
+}
+
+model News {
+  id          Int       @id @default(autoincrement())
+  title       String
+  slug        String    @unique
+  cover       String?
+  summary     String?   @db.Text
+  content     String?   @db.Text
+  isTop       Boolean   @default(false) @map("is_top")
+  click       Int       @default(0)
+  visible     Boolean   @default(true)
+  seoTitle    String?   @map("seo_title")
+  seoKeywords String?   @map("seo_keywords")
+  seoDesc     String?   @map("seo_desc")
+  legacyId    Int?      @map("legacy_id")
+  publishedAt DateTime? @map("published_at")
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @updatedAt @map("updated_at")
+
+  @@index([visible, publishedAt])
+  @@map("news")
+}
+
+model Page {
+  slug        String   @id
+  title       String
+  content     String?  @db.Text
+  seoTitle    String?  @map("seo_title")
+  seoKeywords String?  @map("seo_keywords")
+  seoDesc     String?  @map("seo_desc")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@map("pages")
+}
+
+model Inquiry {
+  id        Int      @id @default(autoincrement())
+  name      String
+  phone     String?
+  email     String?
+  company   String?
+  productId Int?     @map("product_id")
+  product   Product? @relation(fields: [productId], references: [id], onDelete: SetNull)
+  message   String   @db.Text
+  status    String   @default("new")
+  ip        String?
+  ua        String?
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([status, createdAt])
+  @@map("inquiries")
+}
+
+model AdminUser {
+  id           Int       @id @default(autoincrement())
+  username     String    @unique
+  passwordHash String    @map("password_hash")
+  name         String?
+  role         String    @default("admin")
+  lastLoginAt  DateTime? @map("last_login_at")
+  createdAt    DateTime  @default(now()) @map("created_at")
+
+  @@map("admin_users")
+}
+
+model Setting {
+  key   String @id
+  value String @db.Text
+
+  @@map("settings")
+}
