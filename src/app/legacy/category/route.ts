@@ -3,15 +3,18 @@ import { db } from "@/lib/db";
 
 export async function GET(req: NextRequest) {
   const sid = Number(req.nextUrl.searchParams.get("sid"));
-  if (!sid) return NextResponse.redirect(new URL("/products", req.url), 301);
+  let target = "/products";
 
-  const category = await db.category.findFirst({
-    where: { legacyId: sid, visible: true },
-    select: { slug: true },
+  if (sid) {
+    const category = await db.category.findFirst({
+      where: { legacyId: sid, visible: true },
+      select: { slug: true },
+    });
+    if (category) target = `/products?brand=${category.slug}`;
+  }
+
+  return new NextResponse(null, {
+    status: 301,
+    headers: { Location: target },
   });
-
-  return NextResponse.redirect(
-    new URL(category ? `/products?brand=${category.slug}` : "/products", req.url),
-    301,
-  );
 }
