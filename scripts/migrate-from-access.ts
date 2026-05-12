@@ -288,14 +288,14 @@ async function main() {
   // ---------- 6. 默认网站设置 ----------
   const settings = [
     ["site_name", "KASTAS · 加斯达密封件"],
-    ["site_subtitle", "进口工业密封件 · 30+ 国际品牌一站式供应"],
+    ["site_subtitle", "工业密封件 · 30+ 品牌一站式供应"],
     [
       "site_keywords",
       "密封件,油封,液压密封,O型圈,Parker,SKF,Trelleborg,Merkel,Kastas",
     ],
     [
       "site_desc",
-      "佛山加斯达密封件，专注进口液压气动密封件，授权代理 Parker / SKF / Trelleborg / Merkel / 太阳铁工 等 30 余国际品牌。",
+      "佛山加斯达密封件，专注液压气动密封件，授权代理 Parker / SKF / Trelleborg / Merkel / 太阳铁工 等 30 余品牌。",
     ],
   ];
   for (const [k, v] of settings) {

@@ -67,7 +67,7 @@ export async function SiteFooter() {
                 href="https://beian.miit.gov.cn"
                 target="_blank"
                 rel="nofollow noopener noreferrer"
-                className="hover:text-white"
+                className="underline underline-offset-2 text-slate-400 hover:text-white"
               >
                 {s.icp}
               </a>
