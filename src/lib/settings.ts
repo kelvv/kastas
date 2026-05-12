@@ -3,10 +3,10 @@ import { unstable_cache } from "next/cache";
 
 const DEFAULTS: Record<string, string> = {
   site_name: "KASTAS · 加斯达密封件",
-  site_subtitle: "进口工业密封件 · 30+ 国际品牌一站式供应",
+  site_subtitle: "工业密封件 · 30+ 品牌一站式供应",
   site_keywords: "密封件,油封,液压密封,O型圈,Parker,SKF,Trelleborg,Merkel,Kastas",
   site_desc:
-    "佛山加斯达密封件，专注进口液压气动密封件，授权代理 Parker / SKF / Trelleborg / Merkel / 太阳铁工 等 30 余国际品牌。",
+    "佛山加斯达密封件，专注液压气动密封件，授权代理 Parker / SKF / Trelleborg / Merkel / 太阳铁工 等 30 余品牌。",
   contact_phone: "请在后台设置",
   contact_mobile: "",
   contact_email: "info@kastas.cn",
@@ -16,10 +16,10 @@ const DEFAULTS: Record<string, string> = {
   icp: "",
   beian: "",
   copyright: "© 2026 加斯达密封件. All Rights Reserved.",
-  hero_title: "进口工业密封件",
-  hero_subtitle: "30+ 国际品牌 · 一站式供应",
+  hero_title: "工业密封件",
+  hero_subtitle: "30+ 品牌 · 一站式供应",
   hero_desc:
-    "源头原装 · 全系现货 · 工程师 1V1 选型 · 24 小时交付",
+    "源头供应 · 全系现货 · 工程师 1V1 选型 · 24 小时交付",
 };
 
 async function fetchSettings() {

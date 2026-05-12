@@ -55,7 +55,7 @@ export default async function ProductsPage({ searchParams }: Props) {
           <p className="text-slate-300 mt-2">
             {currentBrand
               ? `${currentBrand.name} 系列产品`
-              : "全部进口工业密封件"}
+              : "全系工业密封件"}
           </p>
         </div>
       </div>

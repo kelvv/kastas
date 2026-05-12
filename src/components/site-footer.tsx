@@ -48,7 +48,7 @@ export async function SiteFooter() {
         <div>
           <h4 className="text-white font-semibold mb-3">关于</h4>
           <p className="text-slate-400 leading-relaxed">
-            授权代理 30+ 国际密封件品牌，原厂正品、规格齐全、技术支持。
+            授权代理 30+ 密封件品牌，规格齐全、技术支持。
           </p>
           <Link
             href="/inquiry"

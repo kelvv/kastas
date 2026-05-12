@@ -43,12 +43,12 @@ export default async function Home() {
         <div className="max-w-7xl mx-auto px-4 py-20 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <div className="inline-block px-3 py-1 mb-4 bg-accent/20 text-accent text-xs rounded-full">
-              ★ 30+ 国际品牌授权代理
+              ★ 30+ 品牌授权代理
             </div>
             <h1 className="text-5xl md:text-6xl font-black leading-tight mb-6">
               {settings.hero_title}
               <br />
-              <span className="text-accent">国际原装</span>
+              <span className="text-accent">品质保障</span>
             </h1>
             <p className="text-lg text-slate-200 mb-8 leading-relaxed">
               {settings.hero_desc}
@@ -100,7 +100,7 @@ export default async function Home() {
       <section className="bg-white border-b border-border">
         <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           {[
-            ["原厂正品", "全部源头进口，可验真伪"],
+            ["源头供应", "源头采购可溯源"],
             ["规格齐全", "5000+ 型号现货库存"],
             ["选型专家", "工程师 1V1 技术支持"],
             ["快速交付", "现货 24 小时发货"],
@@ -117,7 +117,7 @@ export default async function Home() {
       <section className="bg-muted">
         <div className="max-w-7xl mx-auto px-4 py-12">
           <h2 className="text-2xl font-bold mb-2">代理品牌</h2>
-          <p className="text-slate-500 mb-6">授权代理国际一线密封件制造商</p>
+          <p className="text-slate-500 mb-6">授权代理一线密封件制造商</p>
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
             {brands.map((b) => (
               <Link
