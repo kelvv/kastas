@@ -62,7 +62,16 @@ export async function SiteFooter() {
         <div className="max-w-7xl mx-auto px-4 py-4 text-xs text-slate-500 flex flex-wrap items-center justify-between gap-2">
           <span>{s.copyright}</span>
           <span className="space-x-4">
-            {s.icp ? <span>{s.icp}</span> : null}
+            {s.icp ? (
+              <a
+                href="https://beian.miit.gov.cn"
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+                className="hover:text-white"
+              >
+                {s.icp}
+              </a>
+            ) : null}
             {s.beian ? <span>{s.beian}</span> : null}
           </span>
         </div>
