@@ -80,7 +80,12 @@ export function HeaderNav({
           {/* 抽屉面板 */}
           <div className="absolute top-0 right-0 h-full w-[82%] max-w-sm bg-white shadow-xl flex flex-col">
             <div className="flex items-center justify-between px-4 h-14 border-b border-border">
-              <span className="text-lg font-black text-primary">KASTAS</span>
+              <span
+                className="text-lg font-bold text-primary"
+                style={{ fontFamily: '"Times New Roman", Times, serif' }}
+              >
+                KASTAS
+              </span>
               <button
                 type="button"
                 aria-label="关闭菜单"

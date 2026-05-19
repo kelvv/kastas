@@ -7,7 +7,12 @@ export async function SiteFooter() {
     <footer className="bg-slate-900 text-slate-300 mt-auto">
       <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
         <div>
-          <div className="text-2xl font-black text-white mb-2">KASTAS</div>
+          <div
+            className="text-2xl font-bold text-white mb-2"
+            style={{ fontFamily: '"Times New Roman", Times, serif' }}
+          >
+            KASTAS
+          </div>
           <p className="text-slate-400 leading-relaxed">{s.site_desc}</p>
         </div>
         <div>

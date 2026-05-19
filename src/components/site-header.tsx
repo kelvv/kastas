@@ -50,7 +50,10 @@ export async function SiteHeader() {
       {/* Logo + 导航 */}
       <div className="max-w-7xl mx-auto px-4 h-16 md:h-20 flex items-center gap-4 md:gap-8">
         <Link href="/" className="flex items-baseline gap-2 md:gap-3 shrink-0">
-          <span className="text-2xl md:text-3xl font-black tracking-tight text-primary">
+          <span
+            className="text-2xl md:text-3xl font-bold tracking-tight text-primary"
+            style={{ fontFamily: '"Times New Roman", Times, serif' }}
+          >
             KASTAS
           </span>
           <span className="hidden sm:inline text-sm text-slate-500 whitespace-nowrap">
